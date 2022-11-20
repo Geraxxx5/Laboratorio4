@@ -1,3 +1,9 @@
+/*
+ * @author Gabriel Pineda, Brandon No
+ * @version 1
+ * @date 19/11/2022
+ * 
+ */
 package radio;
 
 import java.util.Scanner;
@@ -7,6 +13,10 @@ import modelo.canciones;
 import modelo.modeloRadio;
 
 public class RadioMain{
+
+    /** 
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         modeloRadio mR = new modeloRadio(); 
@@ -231,6 +241,10 @@ public class RadioMain{
 
     }
 
+    /** 
+     * @param power
+     * @return String
+     */
     public static String encendidoApagado(boolean power){
         if(power){
             return "Encendido";
@@ -238,6 +252,10 @@ public class RadioMain{
         return "Apagado";
     }
 
+    /** 
+     * @param power
+     * @return String
+     */
     public static String encendidoApagadoT(boolean power){
         if(power){
             return "Encendido";
@@ -245,6 +263,9 @@ public class RadioMain{
         return "Apagado";
     }
 
+    /** 
+     * @param mR
+     */
     public static void mostarContactos(modeloRadio mR){
         for (int i = 0; i < mR.getContactos().size(); i++) {
             System.out.println(i+") "+mR.getContactos().get(i).getNombre());

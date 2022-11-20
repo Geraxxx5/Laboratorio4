@@ -22,90 +22,178 @@ public class modeloRadio implements IProductividad{
     boolean enLlamada = false;
     ArrayList<contacto> contactos = new ArrayList<>();
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean isConectar() {
         return conectar;
     }
 
+    
+    /** 
+     * @param conectar
+     */
     public void setConectar(boolean conectar) {
         this.conectar = conectar;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getPosContacto() {
         return posContacto;
     }
 
+    
+    /** 
+     * @param posContacto
+     */
     public void setPosContacto(int posContacto) {
         this.posContacto = posContacto;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean isEnLlamada() {
         return enLlamada;
     }
 
+    
+    /** 
+     * @param enLlamada
+     */
     public void setEnLlamada(boolean enLlamada) {
         this.enLlamada = enLlamada;
     }
 
+    
+    /** 
+     * @return ArrayList<contacto>
+     */
     public ArrayList<contacto> getContactos() {
         return contactos;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getPosCancion() {
         return posCancion;
     }
 
+    
+    /** 
+     * @param posCancion
+     */
     public void setPosCancion(int posCancion) {
         this.posCancion = posCancion;
     }
 
+    
+    /** 
+     * @param contactos
+     */
     public void setContactos(ArrayList<contacto> contactos) {
         this.contactos = contactos;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean isPower() {
         return power;
     }
 
+    
+    /** 
+     * @param power
+     */
     public void setPower(boolean power) {
         this.power = power;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getPosReproduccion() {
         return posReproduccion;
     }
 
+    
+    /** 
+     * @param posReproduccion
+     */
     public void setPosReproduccion(int posReproduccion) {
         this.posReproduccion = posReproduccion;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getVolumen() {
         return volumen;
     }
 
+    
+    /** 
+     * @param volumen
+     */
     public void setVolumen(int volumen) {
         this.volumen = volumen;
     }
 
+    
+    /** 
+     * @return ArrayList<Double>
+     */
     public ArrayList<Double> getEmisorasGuardadas() {
         return emisorasGuardadas;
     }
 
+    
+    /** 
+     * @param emisorasGuardadas
+     */
     public void setEmisorasGuardadas(ArrayList<Double> emisorasGuardadas) {
         this.emisorasGuardadas = emisorasGuardadas;
     }
 
+    
+    /** 
+     * @return ArrayList<Reproductora>
+     */
     public ArrayList<Reproductora> getCanciones() {
         return canciones;
     }
 
+    
+    /** 
+     * @param canciones
+     */
     public void setCanciones(ArrayList<Reproductora> canciones) {
         this.canciones = canciones;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getEmisora() {
         return emisora;
     }
 
+    
+    /** 
+     * @param emisora
+     */
     public void setEmisora(double emisora) {
         this.emisora = emisora;
     }
@@ -116,26 +204,50 @@ public class modeloRadio implements IProductividad{
         setTarjetas();
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean isModoRadio() {
         return modoRadio;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getEstadoRadio() {
         return estadoRadio;
     }
 
+    
+    /** 
+     * @param estadoRadio
+     */
     public void setEstadoRadio(String estadoRadio) {
         this.estadoRadio = estadoRadio;
     }
 
+    
+    /** 
+     * @param modoRadio
+     */
     public void setModoRadio(boolean modoRadio) {
         this.modoRadio = modoRadio;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean isModoReproduccion() {
         return modoReproduccion;
     }
 
+    
+    /** 
+     * @param modoReproduccion
+     */
     public void setModoReproduccion(boolean modoReproduccion) {
         this.modoReproduccion = modoReproduccion;
     }
@@ -176,6 +288,10 @@ public class modeloRadio implements IProductividad{
         tarjetas.add("Firulais: 6975236");
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getTarjetas(){
         String gT = "";
         for (int index = 0; index < tarjetas.size(); index++) {
@@ -183,6 +299,10 @@ public class modeloRadio implements IProductividad{
         }
         return gT;
     }
+    
+    /** 
+     * @param tarjetas
+     */
     @Override
     public void verTarjetas(ArrayList<String> tarjetas) {
         // TODO Auto-generated method stub

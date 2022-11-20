@@ -18,6 +18,11 @@ public class controladorModoRadio implements IVistaRadio, IRadio, ITelefono{
         this.mR = mR;
     }
 
+    /*
+     * 
+     * Enciende y apaga el vehiculo donde esta el carro
+     * 
+     */
     public void power(){
         if(mR.isPower()){
             mR.setPower(false);
@@ -26,41 +31,77 @@ public class controladorModoRadio implements IVistaRadio, IRadio, ITelefono{
         }
     }
 
+    /*
+     * 
+     * Adelanta la cancion
+     * 
+     */
     public void cancionAdelante(){
         if(mR.getPosCancion() < mR.getCanciones().get(mR.getPosReproduccion()).getCancion().size()){
             mR.setPosCancion(mR.getPosCancion()+1);
         }
     }
 
+    /*
+     * 
+     * Retrocede la cancion
+     * 
+     */
     public void cancionAtras(){
         if(mR.getPosCancion() != 0){
             mR.setPosCancion(mR.getPosCancion()-1);
         }
     }
 
+    
+    /** 
+     * @return String
+     * returna un String con todos los datos de las canciones
+     */
     public String escucharCancion(){
         canciones c = mR.getCanciones().get(mR.getPosReproduccion()).getCancion().get(mR.getPosCancion());
         return "Nombre: "+c.getNombre()+", duracion: "+c.getTiempo()+", autor: "+c.getAutor()+", genero: "+c.getGenero();
     }
 
+
+    /*
+     * 
+     * Sube volumen del radio
+     * 
+     */
     public void subirVolumen(){
         if(mR.getVolumen() != 40){
             mR.setVolumen(mR.getVolumen() +1);
         }
     }
 
+    /*
+     * 
+     * Baja volumen del carro
+     * 
+     */
     public void bajarVolumen(){
         if(mR.getVolumen() != 0){
             mR.setVolumen(mR.getVolumen() -1);
         }
     }
 
+    /*
+     * 
+     * Empieza el modo carro y apaga el reproductor
+     * 
+     */
     public void cambiarAModoRadio(){
         mR.setModoReproduccion(false);
         //mR.setModoTelefono(false);
         Encender();
     }
     
+    /*
+     * 
+     * Empieza el modo reproducir y apaga modo radio
+     * 
+     */
     public void cambiarAmodoReproducir(){
         Apagar();
         //mR.setModoTelefono(false);
@@ -93,6 +134,11 @@ public class controladorModoRadio implements IVistaRadio, IRadio, ITelefono{
         }
     }
 
+    
+    /** 
+     * @return double
+     * Se guarda la emisora en la interfaz
+     */
     @Override
     public double guardarEmisora() {
         mR.getEmisorasGuardadas().add(mR.getEmisora());
@@ -104,6 +150,11 @@ public class controladorModoRadio implements IVistaRadio, IRadio, ITelefono{
         
     }
 
+    
+    /** 
+     * @param pos
+     * Se carga la emisora que esta guardada
+     */
     public void cargarLaEmisora(int pos){
         mR.setEmisora(mR.getEmisorasGuardadas().get(pos));
     }
@@ -124,12 +175,21 @@ public class controladorModoRadio implements IVistaRadio, IRadio, ITelefono{
         
     }
 
+    
+    /** 
+     * @param contactos
+     */
     @Override
     public void mostrarContactos(Array contactos) {
         // TODO Auto-generated method stub
         
     }
 
+    
+    /** 
+     * @param contacto
+     * Llama al contacto
+     */
     @Override
     public void LlamarContacto(int contacto) {
         mR.setPosContacto(contacto);
@@ -142,6 +202,11 @@ public class controladorModoRadio implements IVistaRadio, IRadio, ITelefono{
         
     }
 
+    
+    /** 
+     * @param ultimoContacto
+     * Llama al ultimo contacto que llamo
+     */
     @Override
     public void llamarUltimoContacto(int ultimoContacto) {
         mR.setPosContacto(ultimoContacto);
